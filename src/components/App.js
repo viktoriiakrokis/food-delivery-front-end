@@ -1,11 +1,18 @@
-import React from 'react';
+import React from 'react'
+import styled from 'styled-components'
 
-import Navbar from './Navbar';
+import Navbar from './navbar/Navbar'
+import Footer from './footer/Footer'
+import Content from './content/Content'
+
+const AppContainer = styled.div``
 
 const App = () => (
-    <div className="App">
+    <AppContainer>
         <Navbar />
-    </div>
+        <Content />
+        <Footer />
+    </AppContainer>
 );
 
-export default App;
+export default App
