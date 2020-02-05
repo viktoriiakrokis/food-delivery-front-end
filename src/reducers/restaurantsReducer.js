@@ -1,8 +1,8 @@
-const rootReducer = (state = {}, action) => {
+const restaurantsReducer = (state = {}, action) => {
     switch (action.type) {
         default:
             return state
     }
 }
 
-export default rootReducer
+export default restaurantsReducer
