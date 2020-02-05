@@ -27,7 +27,8 @@ const SortLabel = styled.span`
     font-size: 18px;
 `
 const SortControl = styled.select`
-    witdth: 100px;
+    width: 120px;
+    margin-left: 10px;
     height: 32px;
     padding: 8px;
     border: #491C8A solid 1px;

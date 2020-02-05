@@ -21,6 +21,8 @@ const ElementContainer = styled.div`
 
 const Thumbnail = styled.img`
     width: 100%;
+    object-fit: cover;
+    height: 200px;
     border-radius: 5px 5px 0px 0px;
 `
 
@@ -38,15 +40,25 @@ const RestaurantName = styled.span`
 
 const Description = styled.span`
     color: #888888;
-    font-size: 14px;
+    font-size: 16px;
 `
 
-const ListItem = () => (
+const AddInfo = styled.span`
+    margin-top: 8px;
+    font-size: 12px;
+    color: #888888;
+`
+
+const ListItem = ({ restaurant }) => (
     <ElementContainer>
-        <Thumbnail src="https://prod-wolt-venue-images-cdn.wolt.com/5d108aa82e757db3f4946ca9/d88ebd36611a5e56bfc6a60264fe3f81"/>
+        <Thumbnail src={restaurant.image}/>
         <InfoBox>
-            <RestaurantName>Momotoko Citycenter</RestaurantName>
-            <Description>Japanilaista ramenia parhaimmillaan</Description>
+            <RestaurantName>{ restaurant.name }</RestaurantName>
+            <Description>{ restaurant.description }</Description>
+            <AddInfo>{ restaurant.city } • Delivery price: 
+                     { (restaurant.delivery_price / 100).toFixed(2) } 
+                     { restaurant.currency}
+            </AddInfo>
         </InfoBox>
     </ElementContainer>
 )
