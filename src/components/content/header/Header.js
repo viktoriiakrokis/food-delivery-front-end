@@ -20,6 +20,10 @@ const Title = styled.span`
     font-size: 24px;
     font-weight: 600;
 `
+
+const NumberOfRestaurants = styled.span`
+    font-weight: bold;
+` 
 const SortContainer = styled.div``
 
 const SortLabel = styled.span`
@@ -38,13 +42,17 @@ const SortControl = styled.select`
 `
 
 const SortOption = styled.option``
+const DefaultSortOption = styled.option`
+    display: none
+`
 
-const Header = () => (
+const Header = ({ restaurants }) => (
     <HeaderContainer>
-        <Title>Found 50 restaurants</Title>
+        <Title>Found <NumberOfRestaurants>{ restaurants.length} </NumberOfRestaurants>restaurants</Title>
         <SortContainer>
             <SortLabel>Sort by:</SortLabel>
             <SortControl>
+                <DefaultSortOption selected>Select</DefaultSortOption>
                 <SortOption>Name A-Z</SortOption>
                 <SortOption>Name Z-A</SortOption>
             </SortControl>
