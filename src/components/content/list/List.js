@@ -4,13 +4,21 @@ import ListItem from './ListItem'
 
 const RestaurantList = styled.div`
     display: flex;
-    flex-wrap: wrap;
+    flex-flow: row wrap;
     justify-content: space-between;
+
+    ::after {
+        content: "";
+        width: 31%;
+    }
 `
 
-const List = () => (
+const List = ({ restaurants }) => (
     <RestaurantList>
-        <ListItem />
+        {
+            restaurants.map(restaurant =>
+                <ListItem key={ restaurant.name } restaurant={ restaurant } />)
+        }
     </RestaurantList>
 )
 

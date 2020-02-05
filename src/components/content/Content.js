@@ -1,4 +1,5 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import styled from 'styled-components'
 import Header from './header/Header'
 import List from './list/List'
@@ -12,11 +13,15 @@ const ContentContainer = styled.div`
     padding: 24px;
 `
 
-const Content = () => (
+const Content = ({ restaurants }) => (
     <ContentContainer>
-        <Header />
-        <List />
+        <Header restaurants={ restaurants }/>
+        <List restaurants={ restaurants }/>
     </ContentContainer>
 )
 
-export default Content
+const mapStateToProps = state => ({
+    restaurants: state.restaurants.restaurants
+})
+
+export default connect(mapStateToProps)(Content)
