@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import styled from 'styled-components'
 import Header from './header/Header'
 import List from './list/List'
+import { createSortRestaurantsAction } from '../../actions/restaurantActions'
 
 const ContentContainer = styled.div`
     display: flex;
@@ -13,9 +14,9 @@ const ContentContainer = styled.div`
     padding: 24px;
 `
 
-const Content = ({ restaurants }) => (
+const Content = ({ restaurants, dispatchSort }) => (
     <ContentContainer>
-        <Header restaurants={ restaurants }/>
+        <Header restaurants={ restaurants } dispatchSort={ dispatchSort } />
         <List restaurants={ restaurants }/>
     </ContentContainer>
 )
@@ -24,4 +25,8 @@ const mapStateToProps = state => ({
     restaurants: state.restaurants.restaurants
 })
 
-export default connect(mapStateToProps)(Content)
+const mapDispatchToProps = dispatch => ({
+    dispatchSort: (sortBy) => dispatch(createSortRestaurantsAction(sortBy))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Content)

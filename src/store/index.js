@@ -4,9 +4,6 @@ import initialState from './initialState'
 import rootReducer from '../reducers/rootReducer'
 
 const configureStore = () =>
-    createStore(
-        rootReducer,
-        initialState
-    )
+    createStore(rootReducer, initialState)
 
 export default configureStore
