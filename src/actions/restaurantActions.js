@@ -1,4 +1,4 @@
-export const sortRestaurants = (field, direction) => ({
+export const createSortRestaurantsAction = (sortBy) => ({
     type: 'SORT_RESTAURANTS',
-    payload: { field, direction }
+    payload: { sortBy }
 })

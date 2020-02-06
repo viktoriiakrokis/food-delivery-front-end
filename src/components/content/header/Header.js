@@ -46,15 +46,15 @@ const DefaultSortOption = styled.option`
     display: none
 `
 
-const Header = ({ restaurants }) => (
+const Header = ({ restaurants, dispatchSort }) => (
     <HeaderContainer>
         <Title>Found <NumberOfRestaurants>{ restaurants.length} </NumberOfRestaurants>restaurants</Title>
         <SortContainer>
             <SortLabel>Sort by:</SortLabel>
-            <SortControl>
-                <DefaultSortOption selected>Select</DefaultSortOption>
-                <SortOption>Name A-Z</SortOption>
-                <SortOption>Name Z-A</SortOption>
+            <SortControl onChange={ (event) => dispatchSort(event.target.value) }>
+                <DefaultSortOption>Choose...</DefaultSortOption>
+                <SortOption value='NameAsc'>Name A-Z</SortOption>
+                <SortOption value='NameDesc'>Name Z-A</SortOption>
             </SortControl>
         </SortContainer>
     </HeaderContainer>
