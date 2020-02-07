@@ -10,15 +10,48 @@ const HeaderContainer = styled.div`
     border-bottom: #491C8A solid 1px;
     font-family: Nunito;
 
-    @media (min-width: 480px) {
+    @media (min-width: 520px) {
         justify-content: space-between;
     }
 `
 
 const Title = styled.span`
+    width: 100%;
     margin-left: 4px;
     font-size: 24px;
     font-weight: 600;
+    text-align: center;
+
+    @media (min-width: 520px) {
+        text-align: left;
+    }
+
+    @media (min-width: 800px) {
+        width: auto;
+    }
+`
+
+const SearchBar = styled.div`
+    display: flex;
+    height: 36px;
+    width: 225px;
+    border: 1px solid #491c8a;
+    padding: 0px 16px 0px 20px;
+   
+    border-radius: 21px;
+`
+
+const SearchRestaurant = styled.input`
+    width: 344px;
+    border: none;
+    font-size: 16px;
+    outline: none;
+`
+
+const SearchLogo = styled.img`
+    height: 26px;
+    margin: 5px 0px;
+    cursor: pointer;
 `
 
 const NumberOfRestaurants = styled.span`
@@ -34,7 +67,6 @@ const SortControl = styled.select`
     width: 120px;
     margin-left: 10px;
     height: 32px;
-    padding: 8px;
     border: #491C8A solid 1px;
     box-shadow: 0 0px 2px #491C8A;
     font-size: 16px;
@@ -46,9 +78,18 @@ const DefaultSortOption = styled.option`
     display: none
 `
 
-const Header = ({ restaurants, dispatchSort }) => (
+
+const Header = ({ restaurants, dispatchSort, dispatchSearch }) => (
     <HeaderContainer>
         <Title>Found <NumberOfRestaurants>{ restaurants.length} </NumberOfRestaurants>restaurants</Title>
+        <SearchBar>
+            <SearchRestaurant
+                type="text"
+                name="search"
+                placeholder="Search..."
+                onChange={ (event) => dispatchSearch(event.target.value)} />
+            <SearchLogo src="icon.png"/>
+        </SearchBar>
         <SortContainer>
             <SortLabel>Sort by:</SortLabel>
             <SortControl onChange={ (event) => dispatchSort(event.target.value) }>
