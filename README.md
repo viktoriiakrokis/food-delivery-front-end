@@ -3,9 +3,9 @@ This app shows list of restaurants from which you can order food. The app provid
 
 Live preview link: http://food-delivery-front-end.s3-website.eu-north-1.amazonaws.com/
 
-[logo]: https://github.com/viktoriiakrokis/food-delivery-front-end/blob/master/screenshots/mobile-screnshot.png
+[logo]: https://raw.githubusercontent.com/viktoriiakrokis/food-delivery-front-end/master/screenshots/mobile-screnshot.png?token=ANCWWZBW6JJODQEBLGF5OVS6H3CBG
 
-[logo]: https://github.com/viktoriiakrokis/food-delivery-front-end/blob/master/screenshots/desktop-screnshot.png
+[logo]: https://raw.githubusercontent.com/viktoriiakrokis/food-delivery-front-end/master/screenshots/desktop-screnshot.png?token=ANCWWZBW6JJODQEBLGF5OVS6H3CBG
 
 ## Features supported
 Following features were implemented in the application:
