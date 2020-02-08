@@ -6,7 +6,6 @@ const NavbarContainer = styled.div`
     justify-content: center;
     align-items: center;
     height: 68px;
-    margin-bottom: 8px;
     border-bottom: 2px solid #491C8A;
 `
 const Logo = styled.img`
