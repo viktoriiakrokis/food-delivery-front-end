@@ -11,7 +11,7 @@ const ContentContainer = styled.div`
     height: 100%;
     max-width: 1170px;
     margin: auto;
-    padding: 24px;
+    padding: 0px 24px 24px 24px;
 `
 
 const Content = ({ restaurants, dispatchSort, dispatchSearch }) => (

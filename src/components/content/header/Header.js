@@ -4,11 +4,13 @@ import styled from 'styled-components'
 const HeaderContainer = styled.div`
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
     width: 100%;
-    padding-bottom: 8px;
+    padding: 16px 0px;
     border-bottom: #491C8A solid 1px;
     font-family: Nunito;
+
 
     @media (min-width: 520px) {
         justify-content: space-between;
@@ -37,8 +39,11 @@ const SearchBar = styled.div`
     width: 225px;
     border: 1px solid #491c8a;
     padding: 0px 16px 0px 20px;
-   
     border-radius: 21px;
+    
+    @media (max-width: 520px) {
+        margin: 12px 0px;
+    }
 `
 
 const SearchRestaurant = styled.input`
@@ -74,10 +79,6 @@ const SortControl = styled.select`
 `
 
 const SortOption = styled.option``
-const DefaultSortOption = styled.option`
-    display: none
-`
-
 
 const Header = ({ restaurants, dispatchSort, dispatchSearch }) => (
     <HeaderContainer>
@@ -93,7 +94,7 @@ const Header = ({ restaurants, dispatchSort, dispatchSearch }) => (
         <SortContainer>
             <SortLabel>Sort by:</SortLabel>
             <SortControl onChange={ (event) => dispatchSort(event.target.value) }>
-                <DefaultSortOption>Choose...</DefaultSortOption>
+                <SortOption value='None'>None</SortOption>
                 <SortOption value='NameAsc'>Name A-Z</SortOption>
                 <SortOption value='NameDesc'>Name Z-A</SortOption>
             </SortControl>
