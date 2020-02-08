@@ -1,8 +1,34 @@
 # Food Delivery Front-End
-This app shows list of restaurants from which you can order food. The app provides some additional functionality like sorting restaurants and others. This software is Single Page Application built in React.
+This app shows list of restaurants from which you can order food. The app provides some additional functionality like sorting and searching restaurants. This software is Single Page Application built in React.
+
+Live preview link: http://food-delivery-front-end.s3-website.eu-north-1.amazonaws.com/
+
+[logo]: https://github.com/viktoriiakrokis/food-delivery-front-end/raw/master/screenshots/mobile-screenshot.png
+
+[logo]: https://github.com/viktoriiakrokis/food-delivery-front-end/raw/master/screenshots/desktop-screenshot.png
+
+## Features supported
+Following features were implemented in the application:
+ * Display a list of pre-defined restaurants
+ * Sorting restaurants by name in ascending or descending order
+ * Interactive live search by restaurant name
+
+## Layouts
+Front-end supports three types of screens:
+ * Mobile - screen width from 320 up to 519 px
+ * Tablet - screen width from 520px up to 799px
+ * Desktop - screen width from 800px
+
+## Technologies
+Following tech stack was used in this project:
+ * HTML / CSS
+ * JavaScript
+ * React + Redux + StyledComponents
 
 ## Getting started
-Install dependecies:
+Make sure you have installed NPM on your machine: [How to Install Node.js and NPM on a Mac](https://blog.teamtreehouse.com/install-node-js-npm-mac)
+
+Install dependecies in the root directory of the project:
 ```
 npm install
 ```
@@ -14,6 +40,7 @@ Run the app in the development mode:
 ```
 npm start
 ```
+
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser. The page will reload if you make edits. You will also see any lint errors in the console.
 
 Launch the test runner in the interactive watch mode:
@@ -22,7 +49,6 @@ npm test
 ```
 
 ## Production Enviroment
-
 Build the app for production to the `build` folder:
 ```
 npm build
