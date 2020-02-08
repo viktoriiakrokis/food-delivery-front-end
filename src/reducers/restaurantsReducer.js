@@ -2,7 +2,7 @@ const restaurantsReducer = (state = {}, action) => {
     switch (action.type) {
         case 'SORT_RESTAURANTS':
         case 'SEARCH_RESTAURANTS':
-            const query = action.payload.query ? action.payload.query.toLowerCase() : state.query
+            const query = action.payload.query !== undefined ? action.payload.query.toLowerCase() : state.query
             const sortBy = action.payload.sortBy || state.sortBy
 
             const comparisonFunction = COMPARISON_FUNCTIONS[sortBy]
