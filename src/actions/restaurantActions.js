@@ -1,9 +1,4 @@
-export const createSortAction = (sortBy) => ({
+export const createSortRestaurantsAction = (sortBy) => ({
     type: 'SORT_RESTAURANTS',
     payload: { sortBy }
-})
-
-export const createSearchAction = (query) => ({
-    type: 'SEARCH_RESTAURANTS',
-    payload: { query }
 })
