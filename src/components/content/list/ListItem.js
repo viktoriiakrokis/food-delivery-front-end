@@ -64,7 +64,7 @@ const CURRENCY_MAP = {
 }
 
 const ListItem = ({ restaurant }) => (
-    <ElementContainer>
+    <ElementContainer className="cart">
         <Thumbnail src={restaurant.image}/>
         <InfoBox>
             <RestaurantName>{ restaurant.name }</RestaurantName>

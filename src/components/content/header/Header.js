@@ -82,9 +82,10 @@ const SortOption = styled.option``
 
 const Header = ({ restaurants, dispatchSort, dispatchSearch }) => (
     <HeaderContainer>
-        <Title>Found <NumberOfRestaurants>{ restaurants.length} </NumberOfRestaurants>restaurants</Title>
+        <Title>Found <NumberOfRestaurants >{ restaurants.length} </NumberOfRestaurants>restaurants</Title>
         <SearchBar>
             <SearchRestaurant
+                id='searchbar'
                 type="text"
                 name="search"
                 placeholder="Search..."
@@ -93,7 +94,7 @@ const Header = ({ restaurants, dispatchSort, dispatchSearch }) => (
         </SearchBar>
         <SortContainer>
             <SortLabel>Sort by:</SortLabel>
-            <SortControl onChange={ (event) => dispatchSort(event.target.value) }>
+            <SortControl id='sortbar' onChange={ (event) => dispatchSort(event.target.value) }>
                 <SortOption value='None'>None</SortOption>
                 <SortOption value='NameAsc'>Name A-Z</SortOption>
                 <SortOption value='NameDesc'>Name Z-A</SortOption>
