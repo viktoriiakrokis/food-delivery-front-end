@@ -17,7 +17,6 @@ const initialState = {
         sortBy: 'None',
         query: '',
         tags: ArrTags,
-        selectedTag: '',
         selectedArrTags: []
     }
 }
