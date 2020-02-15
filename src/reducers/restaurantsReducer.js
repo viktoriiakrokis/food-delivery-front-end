@@ -11,6 +11,14 @@ const restaurantsReducer = (state = {}, action) => {
                 .sort(comparisonFunction)
 
             return { ...state, restaurants, query, sortBy }
+
+        case 'FILTER_RESTAURANTS':
+            const tag = action.payload.tag
+
+            const restaurantsFiltered = state.allRestaurants
+                .filter(restaurant => restaurant.tags.includes(tag))
+
+            return { ...state, restaurants: restaurantsFiltered, tag }
         default:
             return state
     }

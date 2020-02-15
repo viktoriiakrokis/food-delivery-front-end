@@ -7,3 +7,8 @@ export const createSearchAction = (query) => ({
     type: 'SEARCH_RESTAURANTS',
     payload: { query }
 })
+
+export const filterByTags = (tag) => ({
+    type: 'FILTER_RESTAURANTS',
+    payload: { tag }
+})
