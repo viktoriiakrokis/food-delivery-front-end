@@ -11,6 +11,25 @@ const restaurantsReducer = (state = {}, action) => {
                 .sort(comparisonFunction)
 
             return { ...state, restaurants, query, sortBy }
+
+        case 'FILTER_RESTAURANTS':
+            const tag = action.payload.tag
+
+            const selectedArrTags = state.selectedArrTags
+            if (!selectedArrTags.includes(tag)) {
+                selectedArrTags.push(tag)
+            } else if(selectedArrTags.includes(tag)){
+                selectedArrTags.splice( selectedArrTags.indexOf(tag), 1 )
+            }
+
+            let restaurantsFiltered = state.allRestaurants.filter(restaurant =>
+                restaurant.tags.some(tag => selectedArrTags.includes(tag)))
+
+            if(selectedArrTags.length === 0) {
+                restaurantsFiltered = state.allRestaurants
+            }
+
+            return { ...state, restaurants: restaurantsFiltered, selectedArrTags }
         default:
             return state
     }
