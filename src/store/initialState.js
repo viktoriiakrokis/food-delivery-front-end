@@ -16,7 +16,8 @@ const initialState = {
         restaurants: data.restaurants,
         sortBy: 'None',
         query: '',
-        tags: ArrTags
+        tags: ArrTags,
+        selectedTag: ''
     }
 }
 

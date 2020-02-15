@@ -18,7 +18,7 @@ const restaurantsReducer = (state = {}, action) => {
             const restaurantsFiltered = state.allRestaurants
                 .filter(restaurant => restaurant.tags.includes(tag))
 
-            return { ...state, restaurants: restaurantsFiltered, tag }
+            return { ...state, restaurants: restaurantsFiltered, selectedTag: tag }
         default:
             return state
     }

@@ -15,21 +15,23 @@ const ContentContainer = styled.div`
     padding: 0px 24px 24px 24px;
 `
 
-const Content = ({ tags, restaurants, dispatchSort, dispatchSearch, dispatchFilter }) => (
+const Content = ({ tags, restaurants, dispatchSort, dispatchSearch, dispatchFilter, selectedTag }) => (
     <ContentContainer>
         <Header
             restaurants={ restaurants }
             dispatchSort={ dispatchSort }
             dispatchSearch={ dispatchSearch } />
         <ListTags tags={ tags }
-            dispatchFilter={ dispatchFilter } />
+            dispatchFilter={ dispatchFilter }
+            selectedTag={ selectedTag } />
         <List restaurants={ restaurants }/>
     </ContentContainer>
 )
 
 const mapStateToProps = state => ({
     restaurants: state.restaurants.restaurants,
-    tags: state.restaurants.tags
+    tags: state.restaurants.tags,
+    selectedTag: state.restaurants.selectedTag
 })
 
 const mapDispatchToProps = dispatch => ({
