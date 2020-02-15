@@ -19,7 +19,6 @@ const TagName = styled.span`
     line-height: 40px; 
     font-family: Nunito;
     font-weight: 700;
-    
 `
 
 const Tag = ({ tag, isSelected, dispatchFilter }) => (

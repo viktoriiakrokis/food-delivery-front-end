@@ -15,10 +15,15 @@ const restaurantsReducer = (state = {}, action) => {
         case 'FILTER_RESTAURANTS':
             const tag = action.payload.tag
 
-            const restaurantsFiltered = state.allRestaurants
+            if(tag === state.selectedTag) {
+
+                return { ...state, restaurants: state.allRestaurants, selectedTag:'' }
+            } else {
+                const restaurantsFiltered = state.allRestaurants
                 .filter(restaurant => restaurant.tags.includes(tag))
 
-            return { ...state, restaurants: restaurantsFiltered, selectedTag: tag }
+                return { ...state, restaurants: restaurantsFiltered, selectedTag: tag }
+            } 
         default:
             return state
     }
