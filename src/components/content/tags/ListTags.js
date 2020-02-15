@@ -13,11 +13,11 @@ const ListContainer = styled.div`
     }
 `
 
-const ListTags = ({ tags, dispatchFilter, selectedTag }) => (
+const ListTags = ({ tags, dispatchFilter, selectedArrTags }) => (
     <ListContainer>
         {
             tags.map(tag =>
-                <Tag dispatchFilter={ dispatchFilter } key={ tag } tag={ tag } isSelected={ tag === selectedTag } />)
+                <Tag dispatchFilter={ dispatchFilter } key={ tag } tag={ tag } isSelected={ selectedArrTags.includes(tag) } />)
         }
     </ListContainer>
 )

@@ -15,7 +15,7 @@ const ContentContainer = styled.div`
     padding: 0px 24px 24px 24px;
 `
 
-const Content = ({ tags, restaurants, dispatchSort, dispatchSearch, dispatchFilter, selectedTag }) => (
+const Content = ({ tags, restaurants, dispatchSort, dispatchSearch, dispatchFilter, selectedArrTags }) => (
     <ContentContainer>
         <Header
             restaurants={ restaurants }
@@ -23,7 +23,7 @@ const Content = ({ tags, restaurants, dispatchSort, dispatchSearch, dispatchFilt
             dispatchSearch={ dispatchSearch } />
         <ListTags tags={ tags }
             dispatchFilter={ dispatchFilter }
-            selectedTag={ selectedTag } />
+            selectedArrTags={ selectedArrTags } />
         <List restaurants={ restaurants }/>
     </ContentContainer>
 )
@@ -31,7 +31,7 @@ const Content = ({ tags, restaurants, dispatchSort, dispatchSearch, dispatchFilt
 const mapStateToProps = state => ({
     restaurants: state.restaurants.restaurants,
     tags: state.restaurants.tags,
-    selectedTag: state.restaurants.selectedTag
+    selectedArrTags: state.restaurants.selectedArrTags
 })
 
 const mapDispatchToProps = dispatch => ({
