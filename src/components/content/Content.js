@@ -38,6 +38,6 @@ const mapDispatchToProps = dispatch => ({
     dispatchSort: (sortBy) => dispatch(createSortAction(sortBy) ),
     dispatchSearch: (query) => dispatch(createSearchAction(query)),
     dispatchFilter: (tag) => dispatch(filterByTags(tag))
-});
+})
 
 export default connect(mapStateToProps, mapDispatchToProps)(Content)
