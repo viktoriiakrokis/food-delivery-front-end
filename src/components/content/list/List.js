@@ -13,6 +13,8 @@ const RestaurantList = styled.div`
     }
 `
 
+
+
 const List = ({ restaurants }) => (
     <RestaurantList>
         {
