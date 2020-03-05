@@ -72,7 +72,7 @@ class ListTags extends React.Component {
                 </Button>
             </ShowTags>
             {tags.slice(0, this.state.itemsToShow).map(tag => 
-                <Tag dispatchFilter={ dispatchFilter } key={ tag } tag={ tag }isSelected={ selectedArrTags.includes(tag) }/>)
+                <Tag dispatchFilter={ dispatchFilter } key={ tag } tag={ tag } isSelected={ selectedArrTags.includes(tag) }/>)
             }
         </ListContainer>
     }
