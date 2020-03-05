@@ -7,7 +7,7 @@ const restaurantsReducer = (state = {}, action) => {
 
             const comparisonFunction = COMPARISON_FUNCTIONS[sortBy]
             const restaurants = state.allRestaurants
-                .filter(restaurant => restaurant.name.toLowerCase().includes(query))
+                .filter(restaurant => restaurant.searchText.toLowerCase().includes(query))
                 .sort(comparisonFunction)
 
             return { ...state, restaurants, query, sortBy }

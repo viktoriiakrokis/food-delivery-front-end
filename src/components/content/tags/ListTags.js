@@ -64,9 +64,9 @@ class ListTags extends React.Component {
             <ShowTags>
                 <Button value = "ShowMore" onClick={this.showMore}>
                 {this.state.expanded ? (
-                    <span>Show less</span>
+                    <span>Show less tags...</span>
                   ) : (
-                    <span>Show more</span>
+                    <span>Show more tags...</span>
                   )
                   }
                 </Button>
