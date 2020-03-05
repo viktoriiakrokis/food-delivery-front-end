@@ -3,10 +3,11 @@ import styled from 'styled-components'
 
 const Container = styled.div `
     display: flex;
-    flex-direction: column;
-    width: 150px;
-    height: 40px;
-    margin-top: 18px;
+    justify-content: center;
+    width: 130px;
+    height: 20px;
+    margin-top: 12px;
+    padding: 4px 0px;
     border: 1px solid #491C8A;
     border-radius: 6px;
     cursor: pointer;
@@ -14,11 +15,9 @@ const Container = styled.div `
     background-color: ${props => props.isSelected ? "#491C8A" : "white"};
 `
 const TagName = styled.span`
-    text-align: center;
-    vertical-align: middle;
-    line-height: 40px; 
+    font-size: 16px;
     font-family: Nunito;
-    font-weight: 700;
+    font-weight: 600;
 `
 
 const Tag = ({ tag, isSelected, dispatchFilter }) => (
