@@ -63,12 +63,8 @@ class ListTags extends React.Component {
         return<ListContainer>
             <ShowTags>
                 <Button value = "ShowMore" onClick={this.showMore}>
-                {this.state.expanded ? (
-                    <span>Show less tags...</span>
-                  ) : (
-                    <span>Show more tags...</span>
-                  )
-                  }
+                    { this.state.expanded && <span>Show less tags...</span> } 
+                    { !this.state.expanded && <span>Show more tags...</span> } 
                 </Button>
             </ShowTags>
             {tags.slice(0, this.state.itemsToShow).map(tag => 
