@@ -4,7 +4,7 @@ import ListTags from './tags/ListTags'
 
 const HeaderContainer = styled.div`
     display: flex;
-    justify-comtent: center;
+    justify-content: center;
     flex-wrap: wrap;
     width: 100%;
     padding: 16px 0px;
