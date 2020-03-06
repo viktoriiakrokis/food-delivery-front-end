@@ -4,8 +4,7 @@ import ListTags from './tags/ListTags'
 
 const HeaderContainer = styled.div`
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-comtent: center;
     flex-wrap: wrap;
     width: 100%;
     padding: 16px 0px;
@@ -13,7 +12,7 @@ const HeaderContainer = styled.div`
     font-family: Nunito;
 
 
-    @media (min-width: 520px) {
+    @media (min-width: 580px) {
         justify-content: space-between;
     }
 `
@@ -78,7 +77,14 @@ const SortControl = styled.select`
     font-size: 16px;
     cursor: pointer;
 `
-const ShowTags = styled.div``
+const ShowTags = styled.div`
+    @media (max-width: 520px) {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin-top: 12px;
+    }
+`
 
 const Button = styled.button`
     text-align: center;
@@ -137,7 +143,7 @@ class Header extends React.Component {
             </SortContainer>
             <ShowTags>
                 <Button onClick={ this.toggleExpanded }>
-                <span>{ this.state.expanded ? 'Show tags' : 'Hide tags' }</span>
+                <span>{ this.state.expanded ? 'Hide tags' : 'Show tags'}</span>
                 </Button>
             </ShowTags>
             { this.state.expanded && <ListTags

@@ -7,6 +7,19 @@ const ListContainer = styled.div`
     justify-content: space-between;
     flex-wrap: wrap;
 
+    @media (max-width: 826px) {
+        ::after {
+          content: none;
+        }
+    }
+    
+    // @media (min-width: 827px) {
+    //     ::after {
+    //       content: "";
+    //       width: 14%;
+    //     }
+    // }
+    
     @media (max-width: 340px) {
         justify-content: center;
     }
