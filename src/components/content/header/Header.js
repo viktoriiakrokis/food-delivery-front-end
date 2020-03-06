@@ -4,7 +4,7 @@ import ListTags from './tags/ListTags'
 
 const HeaderContainer = styled.div`
     display: flex;
-    justify-content: center;
+    justify-congittent: center;
     flex-wrap: wrap;
     width: 100%;
     padding: 16px 0px;
@@ -122,6 +122,7 @@ class Header extends React.Component {
 
     render() {
         const { restaurants, tags, selectedArrTags, dispatchSort, dispatchSearch, dispatchFilter } = this.props
+        const { expanded } = this.state
         return <HeaderContainer>
             <Title>Found <NumberOfRestaurants >{ restaurants.length} </NumberOfRestaurants>restaurants</Title>
             <SearchBar>
@@ -143,10 +144,10 @@ class Header extends React.Component {
             </SortContainer>
             <ShowTags>
                 <Button onClick={ this.toggleExpanded }>
-                <span>{ this.state.expanded ? 'Hide tags' : 'Show tags'}</span>
+                <span>{ expanded ? 'Hide tags' : 'Show tags'}</span>
                 </Button>
             </ShowTags>
-            { this.state.expanded && <ListTags
+            { expanded && <ListTags
                 tags={ tags }
                 dispatchFilter={ dispatchFilter }
                 selectedArrTags={ selectedArrTags } />
