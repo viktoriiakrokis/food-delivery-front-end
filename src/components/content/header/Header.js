@@ -4,16 +4,16 @@ import ListTags from './tags/ListTags'
 
 const HeaderContainer = styled.div`
     display: flex;
-    justify-congittent: center;
+    justify-content: space-between;
     flex-wrap: wrap;
     width: 100%;
     padding: 16px 0px;
     border-bottom: #491C8A solid 1px;
     font-family: Nunito;
 
-
-    @media (min-width: 580px) {
-        justify-content: space-between;
+    @media (max-width: 520px) {
+        display: flex;
+        align-content: center;
     }
 `
 
@@ -24,8 +24,8 @@ const Title = styled.span`
     font-weight: 600;
     text-align: center;
 
-    @media (min-width: 520px) {
-        text-align: left;
+    @media (max-width: 600px) {
+        text-align: center;
     }
 
     @media (min-width: 800px) {
@@ -41,8 +41,8 @@ const SearchBar = styled.div`
     padding: 0px 16px 0px 20px;
     border-radius: 21px;
     
-    @media (max-width: 520px) {
-        margin: 12px 0px;
+    @media (max-width: 680px) {
+    margin: 18px auto;
     }
 `
 
@@ -62,7 +62,17 @@ const SearchLogo = styled.img`
 const NumberOfRestaurants = styled.span`
     font-weight: bold;
 ` 
-const SortContainer = styled.div``
+const SortContainer = styled.div`
+    display: flex;
+    align-item: right;
+
+    @media (max-width: 680px) {
+        display: flex;
+        flex-wrap: wrap;
+        margin: auto;
+        justify-content: center;
+    }
+`
 
 const SortLabel = styled.span`
     margin: 8px;
@@ -77,19 +87,13 @@ const SortControl = styled.select`
     font-size: 16px;
     cursor: pointer;
 `
-const ShowTags = styled.div`
-    @media (max-width: 520px) {
-        display: flex;
-        justify-content: center;
-        width: 100%;
-        margin-top: 12px;
-    }
-`
+
 
 const Button = styled.button`
     text-align: center;
-    height: 34px;
-    width: 180px;
+    height: 32px;
+    width: 140px;
+    margin-left: 18px;
     background-color: #491C8A;
     border-radius: 6px;
     font-size: 16px;
@@ -141,12 +145,11 @@ class Header extends React.Component {
                     <SortOption value='NameAsc'>Name A-Z</SortOption>
                     <SortOption value='NameDesc'>Name Z-A</SortOption>
                 </SortControl>
+                    <Button onClick={ this.toggleExpanded }>
+                        <span>{ expanded ? 'Hide tags' : 'Show tags'}</span>
+                    </Button>
             </SortContainer>
-            <ShowTags>
-                <Button onClick={ this.toggleExpanded }>
-                <span>{ expanded ? 'Hide tags' : 'Show tags'}</span>
-                </Button>
-            </ShowTags>
+            
             { expanded && <ListTags
                 tags={ tags }
                 dispatchFilter={ dispatchFilter }
